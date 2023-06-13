@@ -40,6 +40,6 @@ class TaskController extends BaseController
             return $this->sendError('User does not have any tasks assigned.');
         }
 
-        return $this->sendResponse(new TaskResource($task), 'Task fetched.');
+        return $this->sendResponse(TaskResource::collection($task), 'Task fetched.');
     }
 }
