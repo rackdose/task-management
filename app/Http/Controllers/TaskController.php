@@ -25,14 +25,14 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'assigned_user' => 'required',
+            'user_id' => 'required',
             'due_date' => 'required',
         ]);
 
         $task = Task::create([
             'title' => $request->title,
             'description' => $request->description,
-            'assigned_user' => $request->assigned_user,
+            'user_id' => $request->user_id,
             'due_date' => date('Y-m-d', strtotime($request->due_date)),
         ]);
 
@@ -56,7 +56,7 @@ class TaskController extends Controller
         Task::find($id)->update([
             'title' => $request->title,
             'description' => $request->description,
-            'assigned_user' => $request->assigned_user,
+            'user_id' => $request->user_id,
             'due_date' => date('Y-m-d', strtotime($request->due_date)),
             'status' => $request->status,
         ]);

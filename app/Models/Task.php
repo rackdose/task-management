@@ -15,7 +15,7 @@ class Task extends Model
     protected $fillable = [
         'title',
         'description',
-        'assigned_user',
+        'user_id',
         'due_date',
         'status',
         'deleted_at'
@@ -26,11 +26,11 @@ class Task extends Model
     ];
 
     public function user() {
-        return $this->belongsTo(User::class, 'assigned_user') ;
+        return $this->belongsTo(User::class, 'user_id') ;
     }
 
     public function scopeAssignedUser($query, $id) {
-        return $query->where('assigned_user', $id);
+        return $query->where('user_id', $id);
     }
 
     public function dateString()

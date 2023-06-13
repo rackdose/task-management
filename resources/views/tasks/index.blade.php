@@ -36,7 +36,7 @@
                         <div class="flex space-x-4">
 
                             <!-- Assignee -->
-                            <select name="assigned_user" class="w-1/2 py-3 px-4 bg-gray-100 rounded-lg" required>
+                            <select name="user_id" class="w-1/2 py-3 px-4 bg-gray-100 rounded-lg" required>
                                 <option value="" selected>Assignee</option>
                                 @foreach ($users as $user)
                                     <option value="{{ $user->id }}">{{ $user->name }}</option>

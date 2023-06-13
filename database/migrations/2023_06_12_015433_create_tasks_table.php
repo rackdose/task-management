@@ -22,8 +22,6 @@ class CreateTasksTable extends Migration
             $table->integer('status');
             $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();
-
-            $table->foreign('assigned_user')->references('id')->on('users');
         });
     }
 
