@@ -19,6 +19,28 @@ composer install
 php artisan migrate
 ```
 
+## API
+
+Login (get token) [POST]
+```
+{{baseUrl}}/api/login/
+```
+
+Get all task [GET]
+```
+{{baseUrl}}/api/tasks
+```
+
+Get task by id [GET]
+```
+{{baseUrl}}/api/tasks/{id}
+```
+
+Get task by assigned user [GET]
+```
+{{baseUrl}}/api/tasks/assigned_user/{id}
+```
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
